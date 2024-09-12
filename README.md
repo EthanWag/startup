@@ -8,4 +8,15 @@ BuyZip is an online platform to sell unwanted items that you have lying about an
 
 # What Technologies are used?
 There are a verity of technologies that are going to be used for a variety of purposes. I'll be using html, css and javascript to build the foundations of the website. We will be using Mongo DB to store all of the user data as well as any items and their prices on the market place. We'll also use websockets to provide live data on which items are currently being made available by other users. More specific definitions are in the discription below
-- sdfsdf
+- html:
+- css:
+- Javascript:
+- React: 
+- Node.js:
+- MongoDB:
+- Websockets: 
+- Fetch API:
+- Endpoints:
+
+
+# this is the next thing
