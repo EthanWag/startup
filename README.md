@@ -20,7 +20,7 @@ There are a verity of technologies that are going to be used for a variety of pu
 - MongoDB - Stores critical information about the website and makes it accessable. Information about users, items for sale and authentication will all be stored on the database for safekeeping.
 - Websockets - Allows for live information to be displayed. Items being put up for sale will be sent through a websocket so that all other users immediately know about the item.
 - Fetch API - In order to communcate between the client and server, Fetch API is needed to send and recieve messages. As the client needs to send information to update the server it send it via Fetch through https/http messages.
-- Endpoints - The website will have a series of critical endpoints that implement key features. These will be built on the server side and the client will communicate through them. 
+- Endpoints - The website will have a series of critical endpoints that implement key features. These will be built on the server side and the client will communicate through them.
 
 
 # Endpoints Diagram
