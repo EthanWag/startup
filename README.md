@@ -22,4 +22,6 @@ There are a verity of technologies that are going to be used for a variety of pu
 - Endpoints - The website will have a series of critical endpoints that implement key features. These will be built on the server side and the client will communicate through them.
 
 
-## Endpoints Diagram
+## Overview Diagram
+
+[![startup diagram](buyzip.pdf)]
