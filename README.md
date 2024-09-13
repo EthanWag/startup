@@ -24,4 +24,5 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 ## Overview Diagram
 
-[![startup diagram](buyzip.pdf)]
+[buyzip.pdf](https://github.com/user-attachments/files/16988281/buyzip.pdf)
+
