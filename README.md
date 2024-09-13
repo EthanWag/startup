@@ -14,7 +14,7 @@ Below are some sample pages of what the website may look like
 There are a verity of technologies that are going to be used for a variety of purposes. I'll be using html, css and javascript to build the foundations of the website. We will be using Mongo DB to store all of the user data as well as any items and their prices on the market place. We'll also use websockets to provide live data on which items are currently being made available by other users. More specific definitions are in the discription below
 - HTML: Will be used to create the basic page structure for the website as well as being the primary place to create buttons, divs, and text. In short, it will be the foundation of my website.
 - CSS: Will provide allow me to customize and design my website such that it will look professional and clean.
-- Javascript: allows me to add functionality to my website and to many of the different features on my webpages. Buttons, forms, and user inputs/activity will all be handled by Javascript.
+- Javascript: Allows me to add functionality to my website and to many of the different features on my webpages. Buttons, forms, and user inputs/activity will all be handled by Javascript.
 - React: 
 - Node.js:
 - MongoDB: Stores critical information about the website and makes it accessable. Information about users, items for sale and authentication will all be stored on the database for safekeeping.
