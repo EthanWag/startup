@@ -6,7 +6,9 @@ How many times in our lives have do we have left over or forgotten about stuff. 
 BuyZip is an online platform to sell unwanted items that you have lying about and a great place to buy regular or more niche items that you've been looking for. Once you create an free account, feel free to browse any items currently for sale in our database and if your looking to sell, feel free to register an item online so that people all over the world can buy it! We look forward to shopping with you! 
 
 ## Sample pages 
-Below are some sample pages of what the website may look like
+
+![Screenshot 2024-09-13 at 6 35 31 PM](https://github.com/user-attachments/assets/969c8c33-93a1-4497-b736-0b80d1318a53)
+
 
 
 ## What Technologies are used?
