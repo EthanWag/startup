@@ -41,4 +41,4 @@ There are a verity of technologies that are going to be used for a variety of pu
 ![buyzip](https://github.com/user-attachments/assets/38b16065-97a3-491c-94b0-f44ee961e583)
 
 
-# Updates and Pprogress
+# Updates and Progress
