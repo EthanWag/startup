@@ -15,12 +15,13 @@
     <div>
         <form id="loginForm">
             <p>Sign in</p>
-            <p>Username: <input type="text" id="username" name="username"></p>
-            <p id="passwordField">Password: <input type="password" id="password" name="password"></p>
-            <button type="submit" value="Login">Login</button>
-            <p>NOTE: as people enter their names into the login information, it will be sent via a http post to the database</p>
-            <p>New User? <a href="main.html">Register here</a></p>
-            <p><a href="main.html">temp</a></p>
+            <label for="username">Username: </label><input type="text" id="username" name="username" placeholder="Username or email">
+            <br>
+            <label for="password">Password: </label><input type="password" id="password" name="password" placeholder="password">
+            <br>
+            <button type="button" onclick="location.href='main.html'">Login</button>
+            <!-- NOTE: The login button will first check with the server/database before logging the user in -->
+            <p>New User? <a href="register.html">Register here</a></p>
         </form>
     </div>
     <div>
