@@ -42,3 +42,5 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 
 # Updates and Progress
+
+* first update: So I created my first couple of files and pushed them to git hub, I also made a client folder just so my repo is a bit more orgaized.
