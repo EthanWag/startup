@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyzip - Marketplace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <!-- User logo and username placeholder -->
         <div>
-            <img src="#" alt="User Logo" style="width: 50px; height: 50px;">
+            <img class="user_icon" src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="User Logo">
             <span>Username</span>
         </div>
     </header>
     <nav>
         <ul>
-            <li><a href="#">Logout</a></li>
+            <li><a href="index.html">Logout</a></li> <!-- This will take the user back to the login page, and log them out -->
             <li><a href="#">Cart</a></li>
-            <li><a href="#">Sell Items</a></li>
+            <li><a href="user_inventory.html">Sell Items</a></li>
         </ul>
     </nav>
     <div>
@@ -53,6 +54,10 @@
             <p>Price: $30.00</p>
             </li>
         </ul>
+
+        <p>NOTE: Websocket information would go here, as people go to the website, there items will get added to this list</p>
+        <p>NOTE: Items uploaded to the marketplace will also be stored in the database so that the website has easy access to it</p>
+
     </div>
 </body>
 </html>
