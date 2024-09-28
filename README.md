@@ -46,8 +46,14 @@ There are a verity of technologies that are going to be used for a variety of pu
 ## Update 2.0
 
 In update 2.0, all of the html code for the website has been created aside from a few exceptions. All of the pages basic structure as well as a few examples of what we may see in the future has been created. As more and more css and other code gets added, each of the elements in this website may get moved around and changed but for right now, this should be the general structure of what I do in the future. Below is a list of a few ot the features that I've created from this update.
-
-- Basic page layout (links between websites, a few authentication checks as well as the basics for account information)
-- Basic examples of what we may see on some of these pages. For example in the market.html page, I put a few items inside a list to show what kind of information you can expect to see in each of these boxes.
+- Basic page layout (links between websites, a few authentication checks as well as the basics for account information) 
 - Place holders for websockets, databases and third party systems so that in the future, I can implement those technologies. 
+- Basic examples of what we may see on some of these pages. For example in the market.html page, I put a few items inside a list to show what kind of information you can expect to see in each of these boxes.
+### below are some more in detail notes on what each page does in my website:
+- index.html --> entry point in to the website, allows users to log in or register a new account if they don't have one. Right now, the text boxes don't do anything but in the future you will put that information their and right now, the login button just takes you to the next page
+- main.html --> main page for buyzip. This will have any links that are important to the page. For example, I have links that will take you to the market where you can buy things. I'll also have user inventory where users can look to see what they have for sale and who is intrested in buying said items. Futhermore on this page I'll use a 3rd party service. I'm not 100% sure what I want to do for it yet but some sort of promotion will be in the slot.
+- market.html --> This is the main thing that buyzip does. This page has all the items currently for sale and allows the user to browse what is currently being sold. Here I through a few examples of some information you might see when looking at this market but as we continue, this will look much different.
+- user_inventory.html --> this page will have what items the user currently has for sale in the market place, In the future, I'll have some sort of animaition going on where you can scroll through the different items for sale and edit the prices/items you have in there.
+- user_item.html --> If the user wants to sell a new item, they can go to this page to set up a bit of the information they need to sell their item. It will ask for an item name, discription, a price and an image url. for the price and image url, those are very subject to change as I'm not sure how I want to store those values yet inside of a database. lastly you can press sell item and that will upload it to the database.
 
+The rest of these pages are pretty self-explanatory and range from user cart to about me, the creator. These will be more polished and filled in as times goes on but for now, they are pretty simple.
