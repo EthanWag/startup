@@ -43,5 +43,11 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 # Updates and Progress
 
-* first update: So I created my first couple of files and pushed them to git hub, I also made a client folder just so my repo is a bit more orgaized.
+## Update 2.0
+
+In update 2.0, all of the html code for the website has been created aside from a few exceptions. All of the pages basic structure as well as a few examples of what we may see in the future has been created. As more and more css and other code gets added, each of the elements in this website may get moved around and changed but for right now, this should be the general structure of what I do in the future. Below is a list of a few ot the features that I've created from this update.
+
+- Basic page layout (links between websites, a few authentication checks as well as the basics for account information)
+- Basic examples of what we may see on some of these pages. For example in the market.html page, I put a few items inside a list to show what kind of information you can expect to see in each of these boxes.
+- Place holders for websockets, databases and third party systems so that in the future, I can implement those technologies. 
 
