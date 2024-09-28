@@ -9,3 +9,8 @@
     margin-bottom: 10px;
 
 }
+
+.cart_item img {
+   width: 70px;
+   height: 70px;
+}
