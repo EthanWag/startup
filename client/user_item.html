@@ -2,28 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyzip - User item</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <!-- Picture to be uploaded to the database, hyper link is a work in progress -->
-        <p>upload a .jpg or .png file</p>
-        <input type="file" id="fileUpload" accept=".jpg, .png">
-    </div>
-    <br>
-    <div>
-        <label for="itemName">Item Name:</label>
-        <input type="text" id="itemName">
-    </div>
-    <div>
-        <label for="price">Price:</label>
-        <input type="text" id="price">
-    </div>
-    <div>
-        <label for="description">Description:</label>
-        <input type="text" id="description">
-    </div>
-    <button>Upload</button>
+
+    <header>
+        <img class="user_icon" src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="User Logo">
+        <span>Username</span>
+    </header>
+    <hr>
+
+    <main>
+        <div>
+            <!-- Picture to be uploaded to the database, hyper link is a work in progress -->
+            <p>upload a .jpg or .png file</p>
+            <input type="file" id="fileUpload" accept=".jpg, .png">
+        </div>
+        <br>
+        <div>
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName">
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="text" id="price">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description">
+        </div>
+        <button>Upload</button>
+    </main>
+    <p>Note: This information will be uploaded to the database and will be put on a websocket for all people to see once it is uploaded</p>
     <a href="user_inventory.html">Back</a>
 </body>
 </html>
