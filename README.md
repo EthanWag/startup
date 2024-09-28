@@ -45,6 +45,3 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 * first update: So I created my first couple of files and pushed them to git hub, I also made a client folder just so my repo is a bit more orgaized.
 
-# How do you make a responsive design?
-We can block thing, use a flex design, or many differnt options. For flex, be sure to put flex in class name(or anything) and then put display: flex and then do flex-direction:row to make it grow and shrink depending on what you want to do. So, you want to make html functional and css make it stylish. Float allows stuff to just float have stuff wrap around it. portrait mode 
-
