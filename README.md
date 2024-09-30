@@ -57,3 +57,5 @@ In update 2.0, all of the html code for the website has been created aside from 
 - user_item.html --> If the user wants to sell a new item, they can go to this page to set up a bit of the information they need to sell their item. It will ask for an item name, discription, a price and an image url. for the price and image url, those are very subject to change as I'm not sure how I want to store those values yet inside of a database. lastly you can press sell item and that will upload it to the database.
 
 The rest of these pages are pretty self-explanatory and range from user cart to about me, the creator. These will be more polished and filled in as times goes on but for now, they are pretty simple.
+
+## Update 3.0
