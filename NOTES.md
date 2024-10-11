@@ -10,3 +10,13 @@ We can block thing, use a flex design, or many differnt options. For flex, be su
 
 ## How do you use bootstrap?
 Well in order to use bootstrap just include a link to your bootstrap file and it will do everything for you. Boot strap seems pretty nice and it looks like it will take care of everything. You'll do some more stuff relating to this in CSS frameworks assignment which will teach you most of this stuff.
+
+## JavaScript Promises, async/await
+We need promises because web applications need to wait for various reasons. Javascript is a single threaded program so we can't have multiple threads. Promises have 3 states, pending, fulfilled and rejected. Pending means it is waiting, fulfilled means that it completed the task and we have the data. Finally rejected means something went wrong and were reporting the filure of object. Whenever you get something from the API be sure to stick it into local storage for the time being.
+
+
+
+
+Notes: 
+- so apparently, you can just put a Timeout which counts down until your program runs out of time. 
+- It's best practice to just have your one page dyamically change depending on what you want it to do
