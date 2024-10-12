@@ -11,9 +11,15 @@
 
 <!-- Home bar -->
 <header class="header">Great Deals Below</header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold fs-3" href="#">BuyZip</a>
+        <form class="d-flex mx-3">
+            <input class="form-control me-2 mx-auto" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success mx-auto" type="submit">
+                <img src="https://img.icons8.com/ios-filled/24/000000/search.png" alt="Search">
+            </button>
+        </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,14 +51,14 @@
     </div>
 
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://via.placeholder.com/1100x400" class="d-block w-100" alt="...">
+        <div class="carousel-item active" >
+            <img src="https://herdfreedhartz.com/wp-content/uploads/2024/04/Consumer-1100x400-1.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="https://via.placeholder.com/1100x400" class="d-block w-100" alt="...">
+            <img src="https://discovergroningen.com/wp-content/uploads/2019/02/Folkingestraat-2-1100x400.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="https://via.placeholder.com/1100x400" class="d-block w-100" alt="...">
+            <img src="https://www.centerforhoardingandcluttering.com/wp-content/uploads/2017/10/Hoarding-Support-Group-in-Cave-City-TN-1100x400.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
 
@@ -67,30 +73,91 @@
 
 
 <!-- Sub content -->
-<main class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Awesome Deals</h2>
-            <div class="deal-box rounded border border-dark p-3 mb-3">
-                <div>
-                    <img src="https://via.placeholder.com/150" alt="Deal 1">
-                    <p>Deal 1: 50% off on item A</p>
+<main class="container" style="padding-top:40px; max-width:100%; align-content:flex-start">
+    <div class="d-flex justify-content-between">
+        <div class="row left-div col-md-5 offset-md-1">
+            <h1 style="font-weight:bold; margin-bottom:0; padding-bottom:0;">Great Deals for today</h1>
+            <div class="row mt-0">
+                <div class="col-md-4" style="align-items:flex-start; justify-content:flex-start;">
+                    <div class="deal-box rounded border border-dark p-3 mb-3 text-center" style="height: 300px;">
+                        <img src="https://via.placeholder.com/150" alt="Deal 1" class="img-fluid mb-2">
+                        <h5>Deal 1</h5>
+                        <p>50% off on item A</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://via.placeholder.com/150" alt="Deal 2">
-                    <p>Deal 2: Buy one get one free on item B</p>
+                <div class="col-md-4">
+                    <div class="deal-box rounded border border-dark p-3 mb-3 text-center" style="height: 300px;">
+                        <img src="https://via.placeholder.com/150" alt="Deal 2" class="img-fluid mb-2">
+                        <h5>Deal 2</h5>
+                        <p>Buy one get one free on item B</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://via.placeholder.com/150" alt="Deal 3">
-                    <p>Deal 3: 30% off on item C</p>
+                <div class="col-md-4">
+                    <div class="deal-box rounded border border-dark p-3 mb-3 text-center" style="height: 300px;">
+                        <img src="https://via.placeholder.com/150" alt="Deal 3" class="img-fluid mb-2">
+                        <h5>Deal 3</h5>
+                        <p>30% off on item C</p>
+                    </div>
                 </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-6 text-center">
+                        <h5>Looking to sell?</h5>
+                        <button class="btn btn-primary mt-2">Sell here</button>
+                    </div>
+                    <div class="col-md-1 d-flex align-items-center">
+                        <div class="vr"></div>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <h5>Looking to register?</h5>
+                        <button class="btn btn-primary mt-2">Register here</button>
+                    </div>
+                </div>
+
+
             </div>
 
+
         </div>
-        <div class="col-md-6">
-            <h2>Looking to see old items?</h2>
-            <div class="rounded border border-dark p-3">
-            <p>Look here to sell</p>
+        <div class="right-div">
+            <div class="col-md-8 offset-md-2">
+                <div class="new-items-box rounded border border-dark p-3 mb-3 text-center">
+                    <h5 style="font-weight:bold">New Items Currently for Sale</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="New Item 1">
+                                <div class="card-body">
+                                    <p class="card-text">shoes for $50.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="New Item 2">
+                                <div class="card-body">
+                                    <p class="card-text">red hat for $40.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="New Item 3">
+                                <div class="card-body">
+                                    <p class="card-text">slippers for $10.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="New Item 4">
+                                <div class="card-body">
+                                    <p class="card-text">Xbox for $125.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

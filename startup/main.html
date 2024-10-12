@@ -8,73 +8,51 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="market.html">Market</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sell.html">Sell Items</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="d-flex align-items-center justify-content-start">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/user.png" alt="User Icon" class="me-2 rounded-circle">
+        <span class="text-white">Username</span>
+    </div>
 </header>
-<main>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h1>Welcome to the Home Page</h1>
-                <p>Navigate to different parts of the application using the links above.</p>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="btn btn-primary btn-lg w-100" onclick="location.href='market.html'">Market Place</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn btn-primary btn-lg w-100" onclick="location.href='user_inventory.html'">Sell New Items</div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="btn btn-secondary w-100" onclick="location.href='messages.html'">Messages</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn btn-secondary w-100" onclick="location.href='account.html'">Account</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="btn btn-secondary w-100" onclick="location.href='about.html'">About</div>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search for items" aria-label="Search for items" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Newsletter</h5>
-                        <p class="card-text">Stay updated with our latest news and updates.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Check Out Other Deals</h5>
-                        <p class="card-text"><a href="https://example.com" target="_blank">Visit our partner shop for more deals</a></p>
-                    </div>
-                </div>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-3" href="#">BuyZip</a>
+        <form class="d-flex mx-3">
+            <input class="form-control me-2 mx-auto" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success mx-auto" type="submit">
+                <img src="https://img.icons8.com/ios-filled/24/000000/search.png" alt="Search">
+            </button>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
         </div>
     </div>
-</main>
+</nav>
+
+
+
+
+
+
+
+
+
+
 <footer class="text-center mt-4">
     Hit us up on Instagram! @buyzip
     <button onclick="location.href='about.html'" class="btn btn-link">About</button>
