@@ -2,83 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buyzip - User Inventory</title>
+    <title>Sell-items</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-<style>
-    .carousel-item {
-        text-align: center;
-    }
-    .carousel-item .item-box {
-        display: inline-block;
-        width: 100%;
-        transition: transform 0.5s ease;
-    }
-    .carousel-item img {
-        width: 150px;
-        height: 150px;
-    }
-    }
-</style>
-<body>
-    <header>
-        <img class="user_icon" src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="User Logo">
-        <span>Username</span>
-    </header>
-    <hr>
-    <main>
-        <div id="itemCarousel" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="item-box">
-                        <img src="path/to/image1.jpg" alt="Example Item 1">
+</head>
+<body class="vh-100 d-flex flex-column">
+<header>
+    <div class="d-flex align-items-center justify-content-start">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/user.png" alt="User Icon" class="me-2 rounded-circle">
+        <span class="text-white">Username</span>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-3" href="#">BuyZip</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false" style="position: relative;">
+        <div class="carousel-indicators">
+            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="Slide 1"></div>
+            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-dark" aria-label="Slide 2"></div>
+            <div data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-dark" aria-label="Slide 3"></div>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" >
+                <img src="https://www.publicdomainpictures.net/pictures/30000/nahled/sports-shoes.jpg" class="d-block mx-auto" alt="..." style="max-width: 500px; max-height: 500px;">
+            </div>
+            <div class="carousel-item">
+                <img src="https://mockupgenerator.ap-south-1.linodeobjects.com/Mockups/Teetori/1dca65b7-293f-4bde-932f-84deae29ac5a-5000-front-light%20blue.jpg" class="d-block mx-auto" alt="..." style="max-width: 500px; max-height: 500px;">
+            </div>
+            <div class="carousel-item">
+                <img src="https://hatstore.imgix.net/7333179222373_1.jpg?auto=compress%2Cformat&w=810&h=648&fit=crop&q=80" class="d-block mx-auto" alt="..." style="max-width: 500px; max-height: 500px;">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Item Name 1</h5>
+                        <p class="card-text">Price: $10.00</p>
+                        <button class="btn btn-primary">Edit Item</button>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="item-box">
-                        <img src="path/to/image2.jpg" alt="Example Item 2">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="item-box">
-                        <img src="path/to/image3.jpg" alt="Example Item 3">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="item-box">
-                        <img src="path/to/image4.jpg" alt="Example Item 4">
-                </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#itemCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#itemCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Description</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    </div>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#itemCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#itemCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+            <div class="col-md-3">
+                <a href="user_item.html" class="btn btn-primary">Add New Item</a>
+            </div>
+
         </div>
-        <button onclick="location.href='user_item.html'">Sell New Item</button>
-        <div id="tips">
-            <p>Tips for selling:</p>
-            <p>Gibberish text goes here...</p>
-        </div>
-        <p>NOTE: in the database, it will grab all of the items the user currently has on sale, and it will put them on display here</p>
-        <a href="main.html">back</a>
-    </main>
-    <footer>
-        Hit up on instagram! @buyzip
-    </footer>
+    </div>
+</main>
+
+<footer class="mt-auto"></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>

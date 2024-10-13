@@ -63,7 +63,12 @@ footer{
     left: 8%;
 }
 
-
+.large_button{
+    color: black;
+    font-size: larger;
+    background-size: cover;
+    opacity: 0.7;
+}
 
 
 /* product.html css */
