@@ -22,19 +22,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop</a>
+                    <a class="nav-link" href="market.html">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Items</a>
+                    <a class="nav-link" href="user_inventory.html">Items</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
+                    <a class="nav-link" href="user_cart.html">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Messages</a>
+                    <a class="nav-link" href="messages.html">Messages</a>
                 </li>
             </ul>
         </div>
@@ -51,14 +51,14 @@
                     <div class="container card-body h-100">
                         <div class="container d-flex h-100">
                             <div class="row child flex-grow-1 h-100 p-2">
-                                <button class="btn btn-primary flex-grow-1 large_button" style="background-image:url('https://as2.ftcdn.net/v2/jpg/05/38/41/07/1000_F_538410718_LIvebgTyfVxHVBxVG5PBnHIXJv9LB5h0.jpg')">Marketplace</button>
+                                <button class="btn btn-primary flex-grow-1 large_button" onclick="location.href='market.html'" style="background-image:url('https://as2.ftcdn.net/v2/jpg/05/38/41/07/1000_F_538410718_LIvebgTyfVxHVBxVG5PBnHIXJv9LB5h0.jpg')">Marketplace</button>
                             </div>
                             <div class="container child col flex-grow-1 h-100">
                                 <div class="col child flex-grow-1 h-50 p-2">
-                                    <button class="btn btn-secondary flex-grow-1 w-100 h-100 large_button" style="background-image:url('https://st.depositphotos.com/1037178/2993/v/950/depositphotos_29939773-stock-illustration-cartoon-gold-coins-clipart-vector.jpg')">Sell Items</button>
+                                    <button class="btn btn-secondary flex-grow-1 w-100 h-100 large_button" onclick="location.href='user_inventory.html'" style="background-image:url('https://st.depositphotos.com/1037178/2993/v/950/depositphotos_29939773-stock-illustration-cartoon-gold-coins-clipart-vector.jpg')">Sell Items</button>
                                 </div>
                                 <div class="col child flex-grow-1 h-50 p-2">
-                                    <button class="btn btn-success flex-grow-1 w-100 h-100 large_button" style="background-image:url('https://img.freepik.com/premium-vector/phone-messages-communication-colorful-hands-holding-phone-people-write-sms-send-emoticons-remote-internet-messenger-conversation-online-message-friend-vector-cartoon-flat-concept-illustration_176411-2442.jpg')">Messages</button>
+                                    <button class="btn btn-success flex-grow-1 w-100 h-100 large_button" onclick="location.href='messages.html'" style="background-image:url('https://img.freepik.com/premium-vector/phone-messages-communication-colorful-hands-holding-phone-people-write-sms-send-emoticons-remote-internet-messenger-conversation-online-message-friend-vector-cartoon-flat-concept-illustration_176411-2442.jpg')">Messages</button>
                                 </div>
                             </div>
                         </div>
@@ -67,9 +67,9 @@
 
                 <div class="card mt-4" style="height:300px; width:100%;">
                     <div class="card-body d-flex h-100 justify-content-between">
-                        <button class="btn btn-primary" style="background-image:url('future item'); width:30%;">Account Info</button>
-                        <button class="btn btn-secondary" style="background-image:url('future item'); width:30%;">Other Great Deals</button>
-                        <button class="btn btn-success" style="background-image:url('future item'); width:30%;">About</button>
+                        <button class="btn btn-primary" onclick="location.href='account.html'" style="background-image:url('future item'); width:30%;">Account Info</button>
+                        <button class="btn btn-secondary" onclick="location.href='https://www.amazon.com/'" style="background-image:url('future item'); width:30%;">Other Great Deals</button>
+                        <button class="btn btn-success" onclick="location.href='about.html'" style="background-image:url('future item'); width:30%;">About</button>
                     </div>
                 </div>
             </div>
@@ -95,7 +95,12 @@
     </div>
 </main>
 
-<footer> </footer>
+<footer>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0">&copy; 2021 BuyZip</p>
+        <a href="about.html" class="text-decoration-none">About us</a>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
