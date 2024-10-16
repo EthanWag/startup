@@ -43,7 +43,7 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 # Updates and Progress
 
-## Update 2.0
+## html Startup
 
 In update 2.0, all of the html code for the website has been created aside from a few exceptions. All of the pages basic structure as well as a few examples of what we may see in the future has been created. As more and more css and other code gets added, each of the elements in this website may get moved around and changed but for right now, this should be the general structure of what I do in the future. Below is a list of a few ot the features that I've created from this update.
 - Basic page layout (links between websites, a few authentication checks as well as the basics for account information) 
@@ -58,4 +58,6 @@ In update 2.0, all of the html code for the website has been created aside from 
 
 The rest of these pages are pretty self-explanatory and range from user cart to about me, the creator. These will be more polished and filled in as times goes on but for now, they are pretty simple.
 
-## Update 3.0
+## css Startup
+
+So for this version of the website I went ahead and did most of the css I'm going to need for this project. There are a few black pictures but that is because, in the future, I will have a database that will store each of photos of different items on sale and those will be the pictures of what will be on sale. for now I left them blank aside from a few demo photos where I really wanted to show off what it would look like. For those of this project, I used bootstrap to take care of most of the styling but I do have a styles.css which has some extra stuff in case I found that a particular style or thing was being used a lot. I would say for the most part, index.html and market.html are pretty much done (asside from a few items on the marketplace which will be replaced from items on the database. Also main.html is done. In the future, I will add some api calls to chat gpt which will write some selling online tips that will be stored inside of that box. As for some more features, there will also be a nav bar towards the top which will allow you to navigate from page to page such that you can move around the different pages and services. Also to note that most of the actual features are not in yet, so clicking around won't work 100% yet.
