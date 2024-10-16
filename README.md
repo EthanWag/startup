@@ -43,7 +43,7 @@ There are a verity of technologies that are going to be used for a variety of pu
 
 # Updates and Progress
 
-## Update 2.0
+## html startup
 
 In update 2.0, all of the html code for the website has been created aside from a few exceptions. All of the pages basic structure as well as a few examples of what we may see in the future has been created. As more and more css and other code gets added, each of the elements in this website may get moved around and changed but for right now, this should be the general structure of what I do in the future. Below is a list of a few ot the features that I've created from this update.
 - Basic page layout (links between websites, a few authentication checks as well as the basics for account information) 
