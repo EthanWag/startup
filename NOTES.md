@@ -30,3 +30,15 @@ Notes:
 - If you want to include JavaScript on an HTML page, which tag do you use? <script></script>
 - what does -la do in -la ls. prints out all files with lots of description. 
 - Can a DNS A record can point to an IP address or another A record? Answer: No, only to other A records
+
+flex box example:
+  * display: flex;
+  * flex-direction: column;
+  * margin: 0;
+  * height: 100vh;
+So this tag, display is flex so that is it's type, flex-direction:column is how you want to sort it as you make the screen smaller. margin is how much space you want outside the mex and finally height 100vh is how large you want the screen to be
+
+### How to display an image in html
+<a href="https://example.com">
+    <img src="image.jpg" alt="Description of image">
+</a>
