@@ -20,3 +20,15 @@ We need promises because web applications need to wait for various reasons. Java
 Notes: 
 - so apparently, you can just put a Timeout which counts down until your program runs out of time. 
 - It's best practice to just have your one page dyamically change depending on what you want it to do
+
+
+
+# Notes for the midterm
+- (hashtag) = an ID tag, . = an class tag
+- padding is space inside of a particular tag while margin is surrounding space outside the div tag
+
+
+- what is the syntax for ordered and unordered lists? <ol> = ordered list, <ul> = unordered list
+- If you want to include JavaScript on an HTML page, which tag do you use? <script></script>
+- what does -la do in -la ls. prints out all files with lots of description. 
+- Can a DNS A record can point to an IP address or another A record? Answer: No, only to other A records
