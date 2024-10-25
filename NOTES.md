@@ -42,3 +42,13 @@ So this tag, display is flex so that is it's type, flex-direction:column is how 
 <a href="https://example.com">
     <img src="image.jpg" alt="Description of image">
 </a>
+
+
+# I love Tic Tac Toe
+
+- two readings about simon, so maybe this week and look at react because it's due it two weeks but it is really hard
+
+React is a web framework which is pretty cool. Your going to write to a .jsx file. Babel is something that turns Jsx into javascript and html that then a website can use. What is the building blocks of react are compontents. 
+
+The real DOM is the entire webpage, and that means DOMs can be pretty big. However, a virtual DOM is really useful because it's just a copy of your DOM and when you want to update your DOM it just adds it to the virtual DOM and then find out where things are different and then updates the orignal page. 
+
