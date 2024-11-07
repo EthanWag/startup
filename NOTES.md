@@ -52,3 +52,62 @@ React is a web framework which is pretty cool. Your going to write to a .jsx fil
 
 The real DOM is the entire webpage, and that means DOMs can be pretty big. However, a virtual DOM is really useful because it's just a copy of your DOM and when you want to update your DOM it just adds it to the virtual DOM and then find out where things are different and then updates the orignal page. 
 
+
+
+
+
+## temp code for the time being 
+
+ function Carousel() {
+
+    const [currentIndex,setIndex] = useState(0);
+    const intervalTime = 2000;
+
+    useEffect(() => {
+        const autoSlide = setInterval(() => {
+            setIndex((currentIndex + 1) % 3);
+        }, intervalTime);
+
+        return () => clearInterval(autoSlide);
+    }, [currentIndex]);
+
+
+    const handleNext = () => {
+        clearInterval();
+        setIndex((currentIndex + 1) % 3);
+
+    }
+
+    return (
+        <>
+            <div id="carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" style={{ position: 'relative' }}>
+                <div className="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" className="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="https://herdfreedhartz.com/wp-content/uploads/2024/04/Consumer-1100x400-1.jpg"
+                             className="d-block w-100" alt="..."/>
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://discovergroningen.com/wp-content/uploads/2019/02/Folkingestraat-2-1100x400.jpg"
+                            className="d-block w-100" alt="..."/>
+                    </div>
+                    <div className="carousel-item">
+                        <img src="https://www.centerforhoardingandcluttering.com/wp-content/uploads/2017/10/Hoarding-Support-Group-in-Cave-City-TN-1100x400.jpg"
+                            className="d-block w-100" alt="..."/>
+                    </div>
+                </div>
+                <div id="login" className="carousel-caption d-none d-md-block text-start">
+                    <h5>Sign in Today</h5>
+                    <p>Get the best deals by signing in</p>
+                    <a href="#" className="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </>
+    );
+}
+
