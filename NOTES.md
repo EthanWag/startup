@@ -20,3 +20,44 @@ We need promises because web applications need to wait for various reasons. Java
 Notes: 
 - so apparently, you can just put a Timeout which counts down until your program runs out of time. 
 - It's best practice to just have your one page dyamically change depending on what you want it to do
+
+
+
+# Notes for the midterm
+- (hashtag) = an ID tag, . = an class tag
+- padding is space inside of a particular tag while margin is surrounding space outside the div tag
+- what is the syntax for ordered and unordered lists? "<.ol>" = ordered list, "<.ul>" = unordered list
+- If you want to include JavaScript on an HTML page, which tag do you use? <script></script>
+- what does -la do in -la ls. prints out all files with lots of description. 
+- Can a DNS A record can point to an IP address or another A record? Answer: No, only to other A records
+
+flex box example:
+  * display: flex;
+  * flex-direction: column;
+  * margin: 0;
+  * height: 100vh;
+So this tag, display is flex so that is it's type, flex-direction:column is how you want to sort it as you make the screen smaller. margin is how much space you want outside the mex and finally height 100vh is how large you want the screen to be
+
+### How to display an image in html
+<a href="https://example.com">
+    <img src="image.jpg" alt="Description of image">
+</a>
+
+
+# I love Tic Tac Toe
+
+- two readings about simon, so maybe this week and look at react because it's due it two weeks but it is really hard
+
+React is a web framework which is pretty cool. Your going to write to a .jsx file. Babel is something that turns Jsx into javascript and html that then a website can use. What is the building blocks of react are compontents. 
+
+The real DOM is the entire webpage, and that means DOMs can be pretty big. However, a virtual DOM is really useful because it's just a copy of your DOM and when you want to update your DOM it just adds it to the virtual DOM and then find out where things are different and then updates the orignal page. 
+
+
+# So some notes about the backend
+
+- Note, express expects public inside of the service directory
+            </div>
+        </>
+    );
+}
+
