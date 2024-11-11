@@ -1,0 +1,113 @@
+/* I know I'm not suppose to do css yet but the icon size was bugging me */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Aldrich', sans-serif;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    overflow-x:hidden;
+    top: 0;
+    left: 0;
+}
+
+/* Custom styles for the carousel indicators */
+.custom-carousel .carousel-indicators [data-bs-target] {
+    background-color: gray; /* Change the color of the inactive indicators */
+}
+
+.custom-carousel .carousel-indicators .active {
+    background-color: black; /* Change the color of the active indicator */
+}
+
+.custom-carousel .carousel-control-prev-icon, .custom-carousel .carousel-control-next-icon {
+    filter: invert(100%);  /* Makes the arrow white */
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+    border-radius: 50%;
+    width: 3rem;  /* Adjust size as needed */
+    height: 3rem;
+}
+
+.user_icon{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+header{
+    background: #2c3e50;
+    height: 50px;
+    width: 100%;
+    padding:10px;
+
+    text-align:center;
+    font-size: 20px;
+    color: white;
+}
+nav{
+
+    margin-right: 60px;
+    margin-left: 60px;
+
+}
+
+.carousel-item img{
+    height: 400px;
+    width: 100%;
+}
+
+
+footer{
+    background: #2c3e50;
+    height: 100px;
+    width: 100vw;
+    padding:10px;
+
+    color:white;
+
+}
+
+/* index.html css */
+
+#login{
+    padding:10px;
+    top: 10%;
+    left: 8%;
+}
+
+.large_button{
+    color: black;
+    font-size: larger;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+
+/* product.html css */
+
+
+.cart_item img {
+   width: 70px;
+   height: 70px;
+}
+
+.item-box img {
+   width: 100px;
+   height: 100px;
+}
