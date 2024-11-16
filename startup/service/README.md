@@ -1,0 +1,1 @@
+This is the back end portion for my startup project, index.js should be the file that creates all of the endpoints and makes them avaiable to the frontend and the rest of the folders here help with the backend so that it makes it a streamed line process
