@@ -102,12 +102,11 @@ function registerUser(username,password,email,phone){
     }).then(res => {
 
         if(res.ok) {
+            document.getElementById('registerForm').querySelector('p').innerText = '';
             res.json().then(data => {
                 const token = data.token;
-
-
-
-
+                console.log('success!');
+                // implement logic here that will save token in a state and local storage for future use
             });
         }else{
             switch(res.status){
@@ -122,10 +121,8 @@ function registerUser(username,password,email,phone){
                     document.getElementById('registerForm').querySelector('p').innerText = 'Unknown error';
             }
         }
-
     })
     .catch(err => {
         document.getElementById('registerForm').querySelector('p').innerText = 'Error: Unknown error';
     });
-
 }
