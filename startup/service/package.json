@@ -1,0 +1,16 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "This is the back end portion for my startup project, index.js should be the file that creates all of the endpoints and makes them avaiable to the frontend and the rest of the folders here help with the backend so that it makes it a streamed line process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

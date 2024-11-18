@@ -21,6 +21,7 @@ import '../public/style.css';
 
 export default function App() {
 
+    // put login information right here, you generate authToken inside of registerUser and loginUser
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);

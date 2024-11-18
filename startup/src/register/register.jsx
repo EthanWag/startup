@@ -21,35 +21,39 @@ function Content(){
                             <div className="card">
                                 <div className="card-body" style={{}}>
                                     <h3 className="card-title text-center mb-4">Sign Up</h3>
-                                    <form id="registerForm" className="text-start">
+                                    <form id="registerForm" className="text-start" onSubmit={(e) => {
+                                        e.preventDefault();
+                                        const formData = new FormData(e.target);
+                                        const username = formData.get('username');
+                                        const password = formData.get('password');
+                                        const email = formData.get('email');
+                                        const phone = formData.get('phone');
+                                        registerUser(username, password, email, phone);
+                                    }}>
                                         <div className="mb-3">
                                             <label htmlFor="username" className="form-label">Username</label>
                                             <input type="text" id="username" name="username" className="form-control"
-                                                   placeholder="Username"/>
+                                                   placeholder="Username" required/>
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="password" className="form-label">Password</label>
                                             <input type="password" id="password" name="password"
-                                                   className="form-control" placeholder="Password"/>
+                                                   className="form-control" placeholder="Password" required/>
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="email" className="form-label">Email</label>
                                             <input type="email" id="email" name="email" className="form-control"
-                                                   placeholder="Email"/>
+                                                   placeholder="Email" required/>
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="phone" className="form-label">Phone Number</label>
                                             <input type="tel" id="phone" name="phone" className="form-control"
-                                                   placeholder="Phone Number"/>
+                                                   placeholder="Phone Number" required/>
                                         </div>
                                         <div className="d-grid">
-                                            <button type="button" className="btn btn-primary"
-                                                    onClick={() => navigate('/Main')}>Register
-                                            </button>
+                                            <button type="submit" className="btn btn-primary">Register</button>
                                         </div>
-                                        <p className="text-muted mt-3">Note: This will reach out to the server/database
-                                            and register the user. For now, just click register to go to the next
-                                            page</p>
+                                        <p className="text-muted mt-3" style={{ color: 'red' }}></p>
                                         <p className="mt-3 text-center">Already have an account? <a style={{color:'blue', cursor: 'pointer'}} onClick={() => navigate('/Login')} >Login here</a>
                                         </p>
                                     </form>
@@ -84,4 +88,44 @@ export default function Register() {
             <Body/>
         </>
     )
+}
+
+// in the future, this will be much more advanced, but for now, prints a message for only 2 error types
+function registerUser(username,password,email,phone){
+
+    fetch('http://localhost:5050/api/auth/create', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username:username, password:password, email:email, phone:phone})
+    }).then(res => {
+
+        if(res.ok) {
+            res.json().then(data => {
+                const token = data.token;
+
+
+
+
+            });
+        }else{
+            switch(res.status){
+                case 400:
+                    document.getElementById('registerForm').querySelector('p').innerText = 'Error: Missing required fields';
+                    break;
+                case 409:
+                    console.log('existing user');
+                    document.getElementById('registerForm').querySelector('p').innerText = 'Error: Username already taken';
+                    break;
+                default:
+                    document.getElementById('registerForm').querySelector('p').innerText = 'Unknown error';
+            }
+        }
+
+    })
+    .catch(err => {
+        document.getElementById('registerForm').querySelector('p').innerText = 'Error: Unknown error';
+    });
+
 }
