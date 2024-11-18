@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
+import {AuthContext} from "../../public/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../public/style.css';
@@ -11,6 +11,7 @@ import '../../public/style.css';
 function Content(){
 
     let navigate = useNavigate();
+    const context = useContext(AuthContext);
 
     return (
         <>
@@ -28,7 +29,7 @@ function Content(){
                                         const password = formData.get('password');
                                         const email = formData.get('email');
                                         const phone = formData.get('phone');
-                                        registerUser(username, password, email, phone);
+                                        registerUser(username, password, email, phone, navigate,context);
                                     }}>
                                         <div className="mb-3">
                                             <label htmlFor="username" className="form-label">Username</label>
@@ -91,7 +92,7 @@ export default function Register() {
 }
 
 // in the future, this will be much more advanced, but for now, prints a message for only 2 error types
-function registerUser(username,password,email,phone){
+function registerUser(username,password,email,phone,navigate,context){
 
     fetch('http://localhost:5050/api/auth/create', {
         method: 'POST',
@@ -104,9 +105,11 @@ function registerUser(username,password,email,phone){
         if(res.ok) {
             document.getElementById('registerForm').querySelector('p').innerText = '';
             res.json().then(data => {
-                const token = data.token;
-                console.log('success!');
-                // implement logic here that will save token in a state and local storage for future use
+                context.setAuthToken(data.token);
+                context.setIsAuthenticated(true);
+                context.setUserName(username);
+
+                navigate('/Main');
             });
         }else{
             switch(res.status){

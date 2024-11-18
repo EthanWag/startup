@@ -33,14 +33,15 @@ apiRouter.post('/auth/create', async (req, res) => {
 // Logins in a user
 apiRouter.post('/auth/login', async (req, res) => {
     loginUser(req,res);
-    console.log('logged in!');
 });
 
 // Logs out a user
 apiRouter.delete('/auth/logout', async (req, res) => {
+    console.log('logging out');
     logOutUser(req,res);
-    console.log('logged out!');
 });
+
+// WIP ENDPOINTS, will become filled in as I create a database
 
 // returns a list of items currently for sale, if no parameters are given, returns everything
 apiRouter.get('/items', async (req, res) => {
@@ -71,11 +72,12 @@ function genAuth() {
 function loginUser(req,res) {
     const userData = req.body;
 
-    let user = Object.values(users).find((u) => u.email === userData.email);
+    let user = Object.values(users).find((u) => u.username === userData.username);
     if (user) {
         if (userData.password === user.password) {
             user.token = genAuth();
             res.status(200).send({ token: user.token });
+            console.log('logged in!');
         } else {
             res.status(401).send({ msg: 'Unauthorized' });
         }
@@ -124,9 +126,14 @@ function createUser(req,res) {
 function logOutUser(req,res) {
     const userData = req.body;
 
+
+
     let user = Object.values(users).find((u) => u.token === userData.token);
+    console.log(userData.token);
+    console.log(user.token)
+    console.log(user);
     if (user) {
-        delete user.token;
+        user.token = '';
         res.status(204).end();
     }else{
         res.status(401).send({ msg: 'Unauthorized' });

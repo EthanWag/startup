@@ -1,10 +1,11 @@
+import React, {useContext} from 'react';
 import {useNavigate} from "react-router-dom";
-import React from "react";
+import {AuthContext} from "./AuthContext.jsx";
 
 export default function NavBar(){
 
     let navigate = useNavigate();
-
+    const context = useContext(AuthContext);
     return (
         <>
             <header>
@@ -14,6 +15,13 @@ export default function NavBar(){
                          style={{ cursor: 'pointer' }}/>
                     <span className="text-white">Username</span>
                 </div>
+
+                <div className="d-flex align-items-center justify-content-end" style={{ marginTop: '-35px' }}>
+                    <img src="https://cdn-icons-png.freepik.com/256/10024/10024225.png?semt=ais_hybrid" alt="Logout Icon"
+                            className="icon rounded-circle" onClick={() => logoutUser(navigate,context)}
+                            style={{ cursor: 'pointer' }}/>
+                </div>
+
             </header>
             <nav className="navbar navbar-expand-lg navbar-light bg-white">
                 <div className="container-fluid">
@@ -42,5 +50,41 @@ export default function NavBar(){
                 </nav>
             </>
     );
+}
 
+function logoutUser(navigate,context){
+
+    console.log(context.authToken);
+
+    fetch('http://localhost:5050/api/auth/logout', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({token: context.authToken})
+    })
+        .then((response) => {
+
+            if(response.ok){
+                context.setAuthToken('');
+                context.setIsAuthenticated(false);
+                context.setUserName('');
+
+                navigate('/Enter');
+            }else{
+                switch(response.status){
+                    case 401 || 404:
+                        console.log('got here')
+                        navigate('/NotFound');
+                        break;
+                    case 500:
+                        console.log('Internal Server Error');
+                        break;
+                    default:
+                        console.log('Unknown Error');
+                        break;
+                }
+            }
+        })
+        .catch((error) => console.log(error));
 }
