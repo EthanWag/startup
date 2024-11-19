@@ -75,3 +75,22 @@ For my React Startup, it mostly entailed updating my code out of html and css an
 Lastly, I want to add some notes on what I'm going to add in the future. As for right now, I downloaded some login in stuff from the simon project. Right now it doesn't do anything but in the future I'll modify that code so that I can pass stuff like username or AuthToken down to different compenents as props or hooks that will allow you to access different pages. Another thing in the future is I will want to update my main page so some of the buttons look a bit better, because right now they look like trash. 
 
 Anyway that should be it for updates, let me know if you have any questions!
+
+## Backend Startup
+
+This update we start to build the backend for the buyzip.org website. For now the backend is pretty simple but in the future, more will get added to it. To begin, much of the work done in this phase can be seen in the services directory where we have the index.js which services all of the endpoints as well as some other folders which for right now, have nothing inside of them. In the future, I will be sure to put in some more stuff to make it a bit more complex. As of right now, the only endpoints currently working is the login, register and logout endpoints. These for right now fufill the requirements of the assignments and have functionality. in the section below, I'll explain what each of the functioning endpoints do and then after, which endpoints you'll see in the future.
+- Login: This one is very simple. Given some username and password, look for that username inside of a dictionary and if it exsists, it returns a 200 status code as well as gives an authtoken. It's pretty simple for now, but in the future there will be more added to it
+- Register: This one is similar to the login one and does the same sort of thing. Given a new user, password, email and a phone number it creates a new person object and then generates an authToken and returns it to the client as well as responds with a 200 response code.
+- Logout: lastly, this one allows the user to logout at any time. give a authToken, it checks to see if that user is inside of the dictionary in memory and if that user logged in, deletes their authToken and responseds with a 200. If the user is not in the dictionary, it redirects the user to an error page because they are not supposed to be able to login.
+
+Next up are some work in progress endpoints that will be helpful in the future, but because I don't want to store these sorts of things in memory, I'm waiting till I create a database before creating them.
+
+- Items: given some sort of parameters, will grab items currently for sale and return them to the client. This will be used in the marketplace where I need to be able to grab items that the customer wants and display them.
+- Sell: Another endpoint sell allows any user to put a item up for sale on the market for anyone else to buy. It will store an image of what the item is, a discription about the item and finally the price. These items being stored on the database will be avaible for anyone to see and can be bought
+- Buy: finally, buy takes an item off of the market and puts it into the buyers cart for them to purchase. When something is bought it can be put back on the market again but the buyer first needs to cancel their order.
+
+Because I'll be dealing with images, I would prefer to have a database first because that way it's much more easy to store. there also might be some more endpoints in the future, but for now, these are the ones that for sure will be added if they haven't already. Lastly, it is a requirement to have a 3rd party service to be included inside of your website. Orignally I wanted to do like a daily sales advise for selling things online but I couldn't find an API for that. Right now it generates random facts that are intresting but in the future, I'll probably replace it for something else.
+
+Let me know if you have any questions, Thanks!
+
+
