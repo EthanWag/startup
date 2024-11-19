@@ -37,7 +37,6 @@ apiRouter.post('/auth/login', async (req, res) => {
 
 // Logs out a user
 apiRouter.delete('/auth/logout', async (req, res) => {
-    console.log('logging out');
     logOutUser(req,res);
 });
 
@@ -125,8 +124,6 @@ function createUser(req,res) {
 
 function logOutUser(req,res) {
     const userData = req.body;
-
-
 
     let user = Object.values(users).find((u) => u.token === userData.token);
     console.log(userData.token);
