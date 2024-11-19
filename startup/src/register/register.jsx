@@ -94,12 +94,12 @@ export default function Register() {
 // in the future, this will be much more advanced, but for now, prints a message for only 2 error types
 function registerUser(username,password,email,phone,navigate,context){
 
-    fetch('http://localhost:5050/api/auth/create', {
+    fetch('/api/auth/create', {
         method: 'POST',
+        body: JSON.stringify({username:username, password:password, email:email, phone:phone}),
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({username:username, password:password, email:email, phone:phone})
     }).then(res => {
 
         if(res.ok) {

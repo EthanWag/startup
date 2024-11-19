@@ -26,14 +26,18 @@ function EnterRouter() {
     )
 }
 
-function Login() {
+function Login(){
+
+    let navigate = useNavigate();
+
     return (
         <>
             <div id="login" className="carousel-caption d-none d-md-block text-start">
                 <h5>Sign in Today</h5>
                 <p>Get the best deals by signing in</p>
-                <a href="login.html" className="btn btn-primary">Login</a>
+                <a onClick={() => navigate('/Login')} className="btn btn-primary">Login</a>
             </div>
+
         </>
     )
 }
@@ -46,15 +50,11 @@ class Sales extends React.Component {
         }
     }
 
-    propTypes = {
-        items: PropTypes.array.isRequired
-    }
-
     render() {
         let items = this.state.list;
         return (
             <>
-                <div className="row">
+            <div className="row">
                     {items.map((item, index) => (
                         <div className="col-md-6" key={index}>
                             <div className="card mb-3">
@@ -71,16 +71,16 @@ class Sales extends React.Component {
     }
 }
 
+Sales.propTypes = {
+    items: PropTypes.array.isRequired
+}
+
 class Deals extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
             list: this.props.items || []
         }
-    }
-
-    propTypes = {
-        items: PropTypes.array.isRequired
     }
 
     render() {
@@ -103,6 +103,9 @@ class Deals extends React.Component{
         );
     }
 }
+Deals.propTypes = {
+    items: PropTypes.array.isRequired
+}
 
 function Content() {
     let navigate = useNavigate();
@@ -120,21 +123,21 @@ function Content() {
                             { imgSrc: "https://via.placeholder.com/150", header: "Deal 3", description: "30% off on item C" }
                         ]}/>
 
-                            <div className="row mb-5">
-                                <div className="col-md-6 text-center">
-                                    <h5>Looking to sell?</h5>
-                                    <button className="btn btn-primary mt-2" onClick={() => navigate('/Login')}>Sell here</button>
-                                </div>
-                                <div className="col-md-1 d-flex align-items-center">
-                                    <div className="vr"></div>
-                                </div>
-                                <div className="col-md-5 text-center">
-                                    <h5>Looking to register?</h5>
-                                    <button className="btn btn-primary mt-2" onClick={() => navigate('/Register')}>Register here</button>
-                                </div>
+                        <div className="row mb-5">
+                            <div className="col-md-6 text-center">
+                                <h5>Looking to sell?</h5>
+                                <button className="btn btn-primary mt-2" onClick={() => navigate('/Login')}>Sell here</button>
+                            </div>
+                            <div className="col-md-1 d-flex align-items-center">
+                                <div className="vr"></div>
+                            </div>
+                            <div className="col-md-5 text-center">
+                                <h5>Looking to register?</h5>
+                                <button className="btn btn-primary mt-2" onClick={() => navigate('/Register')}>Register here</button>
                             </div>
                         </div>
                     </div>
+                </div>
                     <div className="right-div">
                         <div className="col-md-8 offset-md-2">
                             <div className="new-items-box rounded border border-dark p-3 mb-3 text-center">
@@ -157,7 +160,6 @@ function Content() {
 function Body(){
     return(
         <>
-
             <header className="header">Great Deals Below</header>
             <nav className="navbar navbar-expand-lg navbar-light bg-white">
                 <div className="container-fluid">

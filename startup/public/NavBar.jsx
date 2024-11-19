@@ -56,25 +56,26 @@ function logoutUser(navigate,context){
 
     console.log(context.authToken);
 
-    fetch('http://localhost:5050/api/auth/logout', {
+    fetch('/api/auth/logout', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({token: context.authToken})
     })
-        .then((response) => {
+        .then((res) => {
 
-            if(response.ok){
+            console.log(res)
+
+            if(res.ok){
                 context.setAuthToken('');
                 context.setIsAuthenticated(false);
                 context.setUserName('');
 
-                navigate('/Enter');
+                navigate('/');
             }else{
-                switch(response.status){
+                switch(res.status){
                     case 401 || 404:
-                        console.log('got here')
                         navigate('/NotFound');
                         break;
                     case 500:

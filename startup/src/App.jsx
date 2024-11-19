@@ -16,9 +16,6 @@ import {AuthProvider} from "../public/AuthContext.jsx";
 
 import '../public/style.css';
 
-
-
-
 export default function App() {
 
   return (

@@ -3,14 +3,21 @@ const cors = require('cors');
 const uuid = require('uuid');
 const app = express();
 
+// TEMPORARY, WILL BE REMOVED LATER
 
-const port =  process > 2 ? process.argv[2] : 5050;
+let users = {};
+let items = {};
+
+// =================================================================
+
+
+const port =  process > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
 
 // Serve up the front-end static content hosting
-app.use(express.static('services'));
+app.use(express.static('public'));
 
 // CORS middleware
 app.use(cors());
@@ -27,6 +34,7 @@ app.listen(port, () => {
 
 // Register a new user
 apiRouter.post('/auth/create', async (req, res) => {
+    // console.log("create user!");
     createUser(req,res);
 });
 
@@ -37,7 +45,6 @@ apiRouter.post('/auth/login', async (req, res) => {
 
 // Logs out a user
 apiRouter.delete('/auth/logout', async (req, res) => {
-    console.log('logging out');
     logOutUser(req,res);
 });
 
@@ -60,9 +67,6 @@ apiRouter.delete('/items/buy', async (req, res) => {
 
 // TEMPORARY METHODS FOR GETTING ENDPOINTS, WILL BE REMOVED LATER
 // =================================================================
-
-users = {};
-items ={};
 
 
 function genAuth() {
@@ -126,12 +130,7 @@ function createUser(req,res) {
 function logOutUser(req,res) {
     const userData = req.body;
 
-
-
     let user = Object.values(users).find((u) => u.token === userData.token);
-    console.log(userData.token);
-    console.log(user.token)
-    console.log(user);
     if (user) {
         user.token = '';
         res.status(204).end();

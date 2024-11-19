@@ -65,21 +65,30 @@ function OtherLinks(){
 }
 
 function Tips(){
+    const [tips, setTips] = React.useState(null);
+
+    React.useEffect(() => {
+        async function fetchTips() {
+            let tipsData = await getTips();
+            setTips(tipsData);
+        }
+        fetchTips();
+    }, []);
+
+    if (!tips) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <>
             <div className="card" style={{height: "300px", width: "100%"}}>
                 <div className="card-body">
-                    <h3 className="card-title">Tips for Selling</h3>
-                    <p>When selling online, best practices include providing clear, high-quality images and detailed
-                        product descriptions to build trust and reduce uncertainty for buyers. Ensure your pricing is
-                        competitive and transparent, avoiding hidden fees that could deter customers. Optimize your
-                        listings for search by using relevant keywords to increase visibility. Offering multiple payment
-                        options and ensuring a smooth, user-friendly checkout process can improve conversions.
-                        </p>
+                    <h3 className="card-title">Fun Fact</h3>
+                    <p>{tips.text}</p>
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 function NewsLetter(){
@@ -99,21 +108,20 @@ function Body() {
     return (
         <>
             <NavBar/>
-            <main className="d-flex flex-column flex-grow-1">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-6 mb-4">
-                            <Directory/>
-                            <OtherLinks/>
-                        </div>
-                        <div className="col-md-6 mb-4">
-                            <Tips/>
-                            <NewsLetter/>
+                <main className="d-flex flex-column flex-grow-1">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-6 mb-4">
+                                <Directory/>
+                                <OtherLinks/>
+                            </div>
+                            <div className="col-md-6 mb-4">
+                                <Tips/>
+                                <NewsLetter/>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </main>
-
+                </main>
             <Footer/>
         </>
     )
@@ -127,4 +135,19 @@ export default function Main() {
             </React.StrictMode>
         </>
     );
+}
+
+async function getTips(){
+    try {
+        const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=default&amount=1', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        });
+        let data = await response.json();
+        return data;
+    } catch (error) {
+            console.error('Error:', error);
+    }
 }

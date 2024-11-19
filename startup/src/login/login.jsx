@@ -76,12 +76,13 @@ export default function Login() {
 
 function loginUser(username,password,navigate,context){
 
-    fetch('http://localhost:5050/api/auth/login', {
+    fetch('/api/auth/login', {
         method: 'POST',
+        body: JSON.stringify({username:username, password:password}),
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({username:username, password:password})
+        // body: JSON.stringify({username:username, password:password})
     })
     .then(res => {
 
