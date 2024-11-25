@@ -1,5 +1,6 @@
-import {DataAccessUser} from "../DAO/DataAccessUser.js";
+import DataAccessUser from "../DAO/DataAccessUser.js";
 import LoginService from "./LoginService.js";
+import bcrypt from 'bcryptjs';
 
 
 export default class RegisterService {
@@ -8,9 +9,10 @@ export default class RegisterService {
 
         try{
 
+            password = await bcrypt.hash(password, 10);
 
             // tries to encrypt the password
-            let dataAccess = new DataAccessUser();
+            const dataAccess = new DataAccessUser();
             await dataAccess.createUser(username, password, email, phone);
 
             // now we need to generate the authorization token
@@ -18,9 +20,8 @@ export default class RegisterService {
             return await new LoginService().login(username, password);
 
         }catch(e){
-            console.error(e);
+            throw e;
         }
-
     }
 }
 

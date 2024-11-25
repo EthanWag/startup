@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import RegisterHandler from './backend/handlers/RegisterHandler.js';
+import LoginHandler from './backend/handlers/LoginHandler.js';
+import LogoutHandler from './backend/handlers/LogoutHandler.js';
 
 
 const app = express();
@@ -43,12 +45,14 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // Logins in a user
 apiRouter.post('/auth/login', async (req, res) => {
-    // loginUser(req,res);
+    const handler = new LoginHandler()
+    await handler.handleLoginRequest(req,res);
 });
 
 // Logs out a user
 apiRouter.delete('/auth/logout', async (req, res) => {
-    // logOutUser(req,res);
+    const handler = new LogoutHandler()
+    await handler.handleLogoutRequest(req,res);
 });
 
 // WIP ENDPOINTS, will become filled in as I create a database

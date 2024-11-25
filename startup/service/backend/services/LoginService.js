@@ -1,5 +1,7 @@
 import { v4 as uuid } from 'uuid';
-import {DataAccessAuthorization} from "../DAO/DataAccessAuthorization.js";
+import DataAccessAuthorization from "../DAO/DataAccessAuthorization.js";
+import DataAccessUser from "../DAO/DataAccessUser.js";
+import bcrypt from 'bcryptjs';
 
 
 export default class LoginService {
@@ -8,9 +10,18 @@ export default class LoginService {
 
         try{
 
-            // check to see if the authentication is even correct
+            let dataAccess = new DataAccessUser();
+            const user = await dataAccess.getUser(username);
 
-            const dataAccess = new DataAccessAuthorization();
+            const isCorrect = await bcrypt.compare(password, user.password);
+            if(!isCorrect) {
+                let error = new Error()
+                error.errno = 401
+                throw error
+            }
+
+            // check to see if the authentication is even correct
+            dataAccess = new DataAccessAuthorization();
             const authToken = uuid()
             await dataAccess.createAuthorization(username, authToken);
 
@@ -19,10 +30,6 @@ export default class LoginService {
         }catch(e){
             console.error(e);
         }
-
-
-
-
     }
 }
 

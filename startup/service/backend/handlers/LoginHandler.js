@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
-import LoginService from '../services/LoginService';
-import ErrorResponse from '../public/ErrorHandler';
+import LoginService from '../services/LoginService.js';
+import ErrorResponse from '../public/ErrorHandler.js';
 
 
 

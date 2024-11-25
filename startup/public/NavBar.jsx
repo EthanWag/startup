@@ -59,9 +59,9 @@ function logoutUser(navigate,context){
     fetch('/api/auth/logout', {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({token: context.authToken})
+            'Content-Type': 'application/json',
+            'Authorization': `${context.authToken}`
+        }
     })
         .then((res) => {
 

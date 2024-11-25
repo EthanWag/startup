@@ -112,20 +112,24 @@ function registerUser(username,password,email,phone,navigate,context){
                 navigate('/Main');
             });
         }else{
+            let message = '';
             switch(res.status){
                 case 400:
-                    document.getElementById('registerForm').querySelector('p').innerText = 'Error: Missing required fields';
+                    message = 'Username already taken';
                     break;
                 case 409:
-                    console.log('existing user');
-                    document.getElementById('registerForm').querySelector('p').innerText = 'Error: Username already taken';
+                    message = 'some other error';
+                    break;
+                case 500 || 502:
+                    message = 'Internal server error';
                     break;
                 default:
-                    document.getElementById('registerForm').querySelector('p').innerText = 'Unknown error';
+                    message = 'Unknown error';
             }
+            document.getElementById('registerForm').querySelector('p').innerText = message;
         }
     })
     .catch(err => {
-        document.getElementById('registerForm').querySelector('p').innerText = 'Error: Unknown error';
+        document.getElementById('registerForm').querySelector('p').innerText = 'Unknown error';
     });
 }
