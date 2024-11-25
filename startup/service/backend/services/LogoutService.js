@@ -7,7 +7,7 @@ export default class LogoutService {
                         const dataAccess = new DataAccessAuthorization();
                         await dataAccess.deleteAuthorization(authToken);
                 }catch(e){
-                        console.error(e);
+                        throw e;
                 }
         }
 }

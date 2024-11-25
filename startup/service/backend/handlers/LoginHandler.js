@@ -1,11 +1,11 @@
 import LoginService from '../services/LoginService.js';
-import ErrorResponse from '../public/ErrorHandler.js';
+import ErrorHandler from '../public/ErrorHandler.js';
 
 
 
 
 export default class LoginHandler {
-     handleLoginRequest(request,response){
+     async handleLoginRequest(request,response){
 
         const username = request.body.username;
         const password = request.body.password;
@@ -13,13 +13,15 @@ export default class LoginHandler {
         try{
 
             // if we get an error in the database, then we will catch it and report the error in the catch statement
-            const serviceResponse = LoginService.login(username,password);
-            response.send(serviceResponse);
+            const service = new LoginService();
+            const serviceResponse = await service.login(username,password);
 
-        }catch{
-            // Temporary error handling
-            console.log("there was an error")
+            const ResponsePackage = {token:serviceResponse};
+            response.status(200).send(ResponsePackage);
 
+        }catch(e){
+            const handler = new ErrorHandler();
+            handler.handleError(e,response)
         }
      }
 }

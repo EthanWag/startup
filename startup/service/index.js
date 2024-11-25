@@ -39,18 +39,21 @@ app.listen(port, () => {
 
 // Register a new user
 apiRouter.post('/auth/create', async (req, res) => {
+    console.log('registering!');
     const handler = new RegisterHandler()
     await handler.handleRegisterRequest(req,res);
 });
 
 // Logins in a user
 apiRouter.post('/auth/login', async (req, res) => {
+    console.log('logging in!');
     const handler = new LoginHandler()
     await handler.handleLoginRequest(req,res);
 });
 
 // Logs out a user
 apiRouter.delete('/auth/logout', async (req, res) => {
+    console.log('logging out!');
     const handler = new LogoutHandler()
     await handler.handleLogoutRequest(req,res);
 });

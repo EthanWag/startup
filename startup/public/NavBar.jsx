@@ -54,19 +54,16 @@ export default function NavBar(){
 
 function logoutUser(navigate,context){
 
-    console.log(context.authToken);
+    console.log("I am here")
 
     fetch('/api/auth/logout', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `${context.authToken}`
-        }
+        },
     })
-        .then((res) => {
-
-            console.log(res)
-
+    .then((res) => {
             if(res.ok){
                 context.setAuthToken('');
                 context.setIsAuthenticated(false);
@@ -75,7 +72,9 @@ function logoutUser(navigate,context){
                 navigate('/');
             }else{
                 switch(res.status){
-                    case 401 || 404:
+                    case 401:
+                    case 404:
+                        console.log('Unauthorized');
                         navigate('/NotFound');
                         break;
                     case 500:

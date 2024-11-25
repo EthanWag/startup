@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PrivateRoute from '../public/PrivateRoute.jsx';
 
 import Enter from './enter/enter.jsx'
 import Main from './main/main.jsx'
@@ -28,14 +29,14 @@ export default function App() {
                             <Route path={'/'} element={<Enter/>}/>
                             <Route path='/login' element={<Login/>}/>
                             <Route path='/register' element={<Register/>}/>
-                            <Route path='/main' element={<Main/>}/>
-                            <Route path='/market' element={<Market/>}/>
-                            <Route path='/inventory' element={<Inventory/>}/>
-                            <Route path='/item' element={<UserItem/>}/>
-                            <Route path='/cart' element={<Cart/>}/>
-                            <Route path='/messages' element={<Messages/>}/>
-                            <Route path='/about' element={<About/>}/>
-                            <Route path='/account' element={<Account/>}/>
+                            <Route path='/main' element={<PrivateRoute element={<Main/>}/>}/>
+                            <Route path='/market' element={<PrivateRoute element={<Market/>}/>}/>
+                            <Route path='/inventory' element={<PrivateRoute element={<Inventory/>}/>}/>
+                            <Route path='/item' element={<PrivateRoute element={<UserItem/>}/>}/>
+                            <Route path='/cart' element={<PrivateRoute element={<Cart/>}/>}/>
+                            <Route path='/messages' element={<PrivateRoute element={<Messages/>}/>}/>
+                            <Route path='/about' element={<PrivateRoute element={<About/>}/>}/>
+                            <Route path='/account' element={<PrivateRoute element={<Account/>}/>}/>
                             <Route path='*' element={<NotFound/>}/>
                         </Routes>
                     </BrowserRouter>

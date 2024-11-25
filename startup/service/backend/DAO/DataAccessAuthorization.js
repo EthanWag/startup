@@ -25,11 +25,24 @@ export default class DataAccessAuthorization {
                     { username: username },
                     { $set: { authorization: authToken } }
                 );
+            }else{
+                let error = new Error();
+                error.errno = 404;
+                throw error;
             }
 
         } catch (e) {
-            console.error("An Error has accured in the DataAccessAuthorization.js file");
-            console.error(e);
+            let error;
+            switch(e.errno){
+                case 404:
+                    error = new Error("ERROR: User not found")
+                    error.errno = 404;
+                    throw error;
+                case 500:
+                    error = new Error("ERROR: Internal Server Error")
+                    error.errno = 500;
+                    throw error;
+            }
         }finally{
             await client.close();
         }
@@ -52,15 +65,30 @@ export default class DataAccessAuthorization {
 
             await client.connect();
             const user = await client.db(dbName).collection(colName).findOne({authorization:authorization});
-            if(user){
+            console.log(user)
+            if(user !== null){
                 await client.db(dbName).collection(colName).updateOne(
                     {authorization:authorization},
                     { $set: { authorization: null } }
                 );
+            }else{
+                let error = new Error();
+                error.errno = 404;
+                throw error;
             }
 
         }catch(e){
-            console.error(e);
+            let error;
+            switch(e.errno){
+                case 404:
+                    error = new Error("ERROR: User not found")
+                    error.errno = 404;
+                    throw error;
+                case 500:
+                    error = new Error("ERROR: Internal Server Error")
+                    error.errno = 500;
+                    throw error;
+            }
         }finally{
             await client.close();
         }

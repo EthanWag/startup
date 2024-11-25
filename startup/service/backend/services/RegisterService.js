@@ -9,11 +9,11 @@ export default class RegisterService {
 
         try{
 
-            password = await bcrypt.hash(password, 10);
+            let hashPassword = await bcrypt.hash(password, 10);
 
             // tries to encrypt the password
             const dataAccess = new DataAccessUser();
-            await dataAccess.createUser(username, password, email, phone);
+            await dataAccess.createUser(username, hashPassword, email, phone);
 
             // now we need to generate the authorization token
             // I just call their service to do this, is that alright

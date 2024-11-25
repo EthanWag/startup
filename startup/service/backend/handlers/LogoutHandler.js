@@ -1,4 +1,5 @@
 import LogoutService from '../services/LogoutService.js'
+import ErrorHandler from '../public/ErrorHandler.js'
 
 export default class LogoutHandler{
 
@@ -12,7 +13,8 @@ export default class LogoutHandler{
             response.status(200).end();
 
         }catch(e){
-
+            const handler = new ErrorHandler();
+            handler.handleError(e, response);
         }
     }
 }

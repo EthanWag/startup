@@ -67,7 +67,6 @@ export default class DataAccessUser {
         } finally {
             await client.close();
         }
-
     }
 
     deleteAuthorization = async (username,authorizationId) => {
