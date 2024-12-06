@@ -1,11 +1,11 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
-import ModCarousel from "../../public/ModCarousel.jsx";
+import ModCarousel from "../../resources/ModCarousel.jsx";
 import {useNavigate} from "react-router-dom";
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../public/style.css';
+import '../../resources/style.css';
 
 function EnterRouter() {
     let navigate = useNavigate(); // This is a hook

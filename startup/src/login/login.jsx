@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {AuthContext} from "../../public/AuthContext.jsx";
+import {AuthContext} from "../../resources/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 
-import '../../public/style.css';
+import '../../resources/style.css';
 
 function Content(){
 

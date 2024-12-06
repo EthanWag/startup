@@ -8,7 +8,6 @@ export default class RegisterService {
     async register(username,password,email,phone) {
 
         try{
-
             let hashPassword = await bcrypt.hash(password, 10);
 
             // tries to encrypt the password

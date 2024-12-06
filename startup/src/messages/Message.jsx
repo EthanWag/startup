@@ -1,8 +1,8 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../public/style.css';
-import NavBar from '../../public/NavBar';
+import '../../resources/style.css';
+import NavBar from '../../resources/NavBar';
 
 
 class Notifications extends React.Component{

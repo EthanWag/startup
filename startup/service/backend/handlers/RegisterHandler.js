@@ -2,7 +2,6 @@ import RegisterService from "../services/RegisterService.js";
 import ErrorHandler from "../public/ErrorHandler.js";
 
 export default class RegisterHandler {
-
     async handleRegisterRequest(request,response){
         try{
             const username = request.body.username;

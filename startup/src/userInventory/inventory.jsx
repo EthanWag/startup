@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import '../../public/style.css';
-import NavBar from '../../public/NavBar.jsx'
-import ModCarousel from "../../public/ModCarousel.jsx";
-import Footer from '../../public/Footer.jsx';
+import '../../resources/style.css';
+import NavBar from '../../resources/NavBar.jsx'
+import ModCarousel from "../../resources/ModCarousel.jsx";
+import Footer from '../../resources/Footer.jsx';
 import {useNavigate} from "react-router-dom";
 
 

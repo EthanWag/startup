@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
-import {AuthContext} from "../../public/AuthContext.jsx";
+import {AuthContext} from "../../resources/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../public/style.css';
+import '../../resources/style.css';
 
 
 
@@ -112,7 +112,7 @@ function registerUser(username,password,email,phone,navigate,context){
                 navigate('/Main');
             });
         }else{
-            let message = '';
+            let message;
             switch(res.status){
                 case 400:
                     message = 'Username already taken';

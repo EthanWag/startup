@@ -4,21 +4,19 @@ const url = `mongodb+srv://eswagstaff:Cooper379@StartupCluster.j9up8.mongodb.net
 
 const dbName = 'UserData';
 const colName = 'Users';
+
+
+const client = new MongoClient(url,{
+    tls: true,
+    serverSelectionTimeoutMS: 4000,
+    autoSelectFamily: false,
+});
+
 // Authorization assumes that a user has already been created
 export default class DataAccessUser {
-
     async createUser(username, password, email, phone) {
-        const client = new MongoClient(url, {
-            serverApi: {
-                version: ServerApiVersion.v1,
-                strict: true,
-                deprecationErrors: true,
-            }
-        });
         try {
-
             await client.connect();
-
             const validUser = await client.db(dbName).collection(colName).findOne({username: username}) === null
 
             if(validUser){
@@ -46,18 +44,12 @@ export default class DataAccessUser {
                     error.errno = 500;
                     throw error;
             }
+        }finally{
+            await client.close();
         }
     }
 
     async getUser(username) {
-        const client = new MongoClient(url, {
-            serverApi: {
-                version: ServerApiVersion.v1,
-                strict: true,
-                deprecationErrors: true,
-            }
-        });
-
         try {
             await client.connect();
             return await client.db(dbName).collection(colName).findOne({username: username});

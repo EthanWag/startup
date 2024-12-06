@@ -20,11 +20,7 @@ export default function ModCarousel({ myImages, extra, isMoveable, height , widt
         }
     }
     function canControl() {
-        if(isMoveable){
-            return true
-        }else{
-            return false
-        }
+        return !!isMoveable;
     }
     return (
         <>

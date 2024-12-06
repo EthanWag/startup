@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PrivateRoute from '../public/PrivateRoute.jsx';
+import PrivateRoute from '../resources/PrivateRoute.jsx';
 
 import Enter from './enter/enter.jsx'
 import Main from './main/main.jsx'
@@ -13,9 +13,9 @@ import Login from './login/login.jsx'
 import Messages from './messages/Message.jsx'
 import About from './about/About.jsx'
 import Account from "./account/Account.jsx";
-import {AuthProvider} from "../public/AuthContext.jsx";
+import {AuthProvider} from "../resources/AuthContext.jsx";
 
-import '../public/style.css';
+import '../resources/style.css';
 
 export default function App() {
 

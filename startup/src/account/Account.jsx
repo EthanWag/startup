@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../public/style.css';
-import NavBar from '../../public/NavBar';
-import Footer from '../../public/Footer';
+import '../../resources/style.css';
+import NavBar from '../../resources/NavBar';
+import Footer from '../../resources/Footer';
 
 function Content(){
     return(

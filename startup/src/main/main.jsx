@@ -2,9 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
 
-import '../../public/style.css';
-import NavBar from '../../public/NavBar.jsx'
-import Footer from '../../public/Footer.jsx'
+import '../../resources/style.css';
+import NavBar from '../../resources/NavBar.jsx'
+import Footer from '../../resources/Footer.jsx'
 
 function Directory(){
 
@@ -145,8 +145,7 @@ async function getTips(){
             'Content-Type': 'application/json',
         },
         });
-        let data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
             console.error('Error:', error);
     }

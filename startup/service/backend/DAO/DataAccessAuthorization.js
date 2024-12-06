@@ -4,19 +4,18 @@ const url = `mongodb+srv://eswagstaff:Cooper379@StartupCluster.j9up8.mongodb.net
 const dbName = 'UserData';
 const colName = 'Users';
 // Authorization assumes that a user has already been created
+
+const client = new MongoClient(url,{
+    tls: true,
+    serverSelectionTimeoutMS: 3000,
+    autoSelectFamily: false,
+});
+
+
 export default class DataAccessAuthorization {
 
     async createAuthorization(username,authToken) {
-        const client = new MongoClient(url,{
-        serverApi: {
-            version: ServerApiVersion.v1,
-                strict: true,
-                deprecationErrors: true,
-            }
-        });
-
         try {
-
             await client.connect();
             const user = await client.db(dbName).collection(colName).findOne({ username: username });
 
@@ -53,14 +52,6 @@ export default class DataAccessAuthorization {
     }
 
     async deleteAuthorization(authorization){
-        const client = new MongoClient(url,{
-            serverApi: {
-                version: ServerApiVersion.v1,
-                strict: true,
-                deprecationErrors: true,
-            }
-        });
-
         try{
 
             await client.connect();
