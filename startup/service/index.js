@@ -3,6 +3,9 @@ import cors from 'cors';
 import RegisterHandler from './backend/handlers/RegisterHandler.js';
 import LoginHandler from './backend/handlers/LoginHandler.js';
 import LogoutHandler from './backend/handlers/LogoutHandler.js';
+import GetItemHandler from './backend/handlers/GetItemHandler.js';
+import SellItemHandler from './backend/handlers/SellItemHandler.js';
+import BuyItemHandler from './backend/handlers/BuyItemHandler.js';
 
 
 const app = express();
@@ -50,19 +53,21 @@ apiRouter.delete('/auth/logout', async (req, res) => {
     await handler.handleLogoutRequest(req,res);
 });
 
-// WIP ENDPOINTS, will become filled in as I create a database
-
 // returns a list of items currently for sale, if no parameters are given, returns everything
 apiRouter.get('/items', async (req, res) => {
-    console.log('items!');
+    const handler = new GetItemHandler()
+    await handler.handleGetItem(req,res);
 });
 
 // adds a item to the market, effectively selling it
 apiRouter.post('/items/sell', async (req, res) => {
-    console.log('items you have for sale!');
+    const handler = new SellItemHandler()
+    await handler.handleSellItemRequest(req,res);
 });
+// WIP ENDPOINTS, will become filled in as I create a database
 
 // buys a item from the market, makes it out of the database
 apiRouter.delete('/items/buy', async (req, res) => {
-    console.log('bought an item!');
+    const handler = new BuyItemHandler()
+    await handler.handleBuyItemRequest(req,res);
 });

@@ -12,7 +12,6 @@ export default class LoginService {
             const user = await dataAccessUser.getUser(username);
 
             const isCorrect = await bcrypt.compare(password, user.password);
-            console.log(isCorrect)
             if(!isCorrect) {
                 let error = new Error('ERROR: Incorrect username or password')
                 error.errno = 401
@@ -23,7 +22,6 @@ export default class LoginService {
             let dataAccessAuth = new DataAccessAuthorization();
             const authToken = uuid()
             await dataAccessAuth.createAuthorization(username,authToken)
-
             return authToken;
 
         }catch(e){

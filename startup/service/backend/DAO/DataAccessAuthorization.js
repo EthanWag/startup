@@ -47,8 +47,17 @@ export default class DataAccessAuthorization {
         }
     }
 
-    getAuthorization = async (authorization) => {
-
+    async checkAuthorization(authorization){
+        try{
+            await client.connect();
+            return !!(await client.db(dbName).collection(colName).findOne({authorization: authorization}));
+        }catch(e){
+            let error = new Error("ERROR: Internal Server Error")
+            error.errno = 500;
+            throw error;
+        }finally{
+            await client.close();
+        }
     }
 
     async deleteAuthorization(authorization){
