@@ -1,10 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useNavigate} from "react-router-dom";
+import { useRef } from 'react';
 
 import '../../resources/style.css';
 import NavBar from '../../resources/NavBar.jsx'
 import Footer from '../../resources/Footer.jsx'
+
+import clicker from './clicker.js'
 
 function Directory(){
 
@@ -44,6 +47,8 @@ function Directory(){
 function OtherLinks(){
 
     let navigate = useNavigate()
+    const textRef = useRef(null);
+    const clickerObj = new clicker(textRef);
 
     return (
         <>
@@ -52,8 +57,9 @@ function OtherLinks(){
                     <button className="btn btn-primary" onClick={() => navigate('/Account')}
                             style={{backgroundImage: "url('future item')", width: "30%"}}>Account Info
                     </button>
-                    <button className="btn btn-secondary" onClick={() => location.href = 'https://www.amazon.com/'}
-                            style={{backgroundImage: "url('future item')", width: "30%"}}>Other Great Deals
+                    <button className="btn btn-secondary" onClick={() => handleClick(clickerObj)}
+                            style={{backgroundImage: "url('future item')", width: "30%"}}>
+                    <span id="text" ref={textRef}></span>
                     </button>
                     <button className="btn btn-success" onClick={() => navigate('/About')}
                             style={{backgroundImage: "url('future item')", width: "30%"}}>About
@@ -147,6 +153,14 @@ async function getTips(){
         });
         return await response.json();
     } catch (error) {
-            console.error('Error:', error);
+        console.error('Error:', error);
     }
+}
+
+
+// ========================================
+// websocket stuff
+
+function handleClick(clickerObj) {
+    clickerObj.buttonClick();
 }

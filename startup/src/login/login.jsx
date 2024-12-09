@@ -110,6 +110,7 @@ function loginUser(username,password,navigate,context){
             }
         }})
     .catch(err => {
+        console.error('Error:', err);
         document.getElementById('loginForm').querySelector('p').innerText = 'Error: Unknown error';
     });
 }
