@@ -92,12 +92,28 @@ Next up are some work in progress endpoints that will be helpful in the future, 
 Because I'll be dealing with images, I would prefer to have a database first because that way it's much more easy to store. there also might be some more endpoints in the future, but for now, these are the ones that for sure will be added if they haven't already. Lastly, it is a requirement to have a 3rd party service to be included inside of your website. Orignally I wanted to do like a daily sales advise for selling things online but I couldn't find an API for that. Right now it generates random facts that are intresting but in the future, I'll probably replace it for something else.
 
 
-## WebSockets and database
+## Database startup
 
-For starters, I want to talk about what I created for my Websockets project and then I'll briefly glaze over what I did for my database. So my orignal plan was to make some cool websockets stuff with my shop so that when people sold items, others could see those new items instantely. That being said, I ran out of time and I ran into the problem of not being able to send pictures over the internet because the file size was too big. If was actually trying to make a startup, I guess I could break that file into multiple chunks and send them over, however, because I have like 2 days to finish, I decided, just to get the points, I would create a clicker button instead. when you click on the button the number goes up and anyone on any server should be able to see it. So it starts from the front end, sends a request to the backend, and your able to see it, so it checks off everything. The only thing I didn't finish everything else in my startup. I didn't want to delete all my code and in the future, I might pick up this project and want to finish it properly. So my broken features say.
+For my database startup, I have a basic set up that allows users to log in and logout as well as register a new account. It's pretty barebones but the features it does have work and I'll go ahead and give a compressive list of new features in the list below:
 
-I guess one other thing I wanted to mention is my database because I don't think I wrote an entry on it. Database works, it can store login information about users and you able to work with it. I also think I finished my WIP endpoints, meanining it can also store items, what there name is, price and all of those details(expect for pictures because those are too big). However they aren't connected to anything. That being said, database is working 
+- Login/Logout functionality: For my startup, you can login with your account you made if you enter your correct password. once logged in, you can access the whole website and look at everything that is in there. You can also logout, as in the top right corner, there is a door button that if clicked, will take you back to the homepage. This will remove your authToken from the database and will restrict you if you are not logged in again.
+- Register new account: If you register a new account on the website, it will take the login information that you gave it and it will put it in the database so that you can login again with those credientials. if a user with the same username already exists, it will tell you, you can't register with that username.
+- Bcrypt: in an effort to make a secure website, my website encrypts passwords with bcrypt before storing them in the database. It helps with security and makes for a more realistic website.
+- limited access: Lastly, if you are not logged in, if you try to access more within the website, it will just redirect you to login. So you have to login before doing anything in the website.
 
-Let me know if you have any questions, Thanks!
+So that's a list of what I made. One final thing I wanted to mention before finishing off this log is that although I made other end points that would have stored things in the database, I sadly couldn't get it to work before the end of the semester. My problem was that I wanted to store pictures of what items were for sale, however, If I wanted to store into memory, I need to first remember that I'm on the Mongodb trial, and picture files are very large. Secondly, in order to send a picture over the internet, it requires a bit more work including, breaking down the file and sending it over in pieces. If I had time, I would love to figure it out but because we are close to the end of the semester, I won't have time to finish it. 
+
+Those are my changes, let me know if you have any questions!
+
+## Database Websockets
+
+My Websockets for this project are extremely simple as you'll see below. I originally had much bigger plans for websockets but because of the end of the semester, went for something that would just finish the project for me. What I made was a clicker, which when clicked, increases the clicker number by one. everyone on the website can see that, and it's real time, so when clicked it updates for everyone. Below are some more spesfics
+
+- frontend clicker: This is just a simple button on the main page that displays the clicker number, I think right now it's like 30. It's websocket connection starts when you open the page and will disconnect you if you leave the page.
+- backend clicker: on the backend, it recieves clicks from the webpages and when it does, it first updates the number and then sends the number to all other users, nothing too crazy
+
+Finally, I know I have a bunch of stuff not working but that's on purpose. I didn't want to delete my code, as I might pick this project up in the future so for now, there is still a bunch still not working.
+
+Let me know if you have any questions, thanks!
 
 
