@@ -91,6 +91,13 @@ Next up are some work in progress endpoints that will be helpful in the future, 
 
 Because I'll be dealing with images, I would prefer to have a database first because that way it's much more easy to store. there also might be some more endpoints in the future, but for now, these are the ones that for sure will be added if they haven't already. Lastly, it is a requirement to have a 3rd party service to be included inside of your website. Orignally I wanted to do like a daily sales advise for selling things online but I couldn't find an API for that. Right now it generates random facts that are intresting but in the future, I'll probably replace it for something else.
 
+
+## WebSockets and database
+
+For starters, I want to talk about what I created for my Websockets project and then I'll briefly glaze over what I did for my database. So my orignal plan was to make some cool websockets stuff with my shop so that when people sold items, others could see those new items instantely. That being said, I ran out of time and I ran into the problem of not being able to send pictures over the internet because the file size was too big. If was actually trying to make a startup, I guess I could break that file into multiple chunks and send them over, however, because I have like 2 days to finish, I decided, just to get the points, I would create a clicker button instead. when you click on the button the number goes up and anyone on any server should be able to see it. So it starts from the front end, sends a request to the backend, and your able to see it, so it checks off everything. The only thing I didn't finish everything else in my startup. I didn't want to delete all my code and in the future, I might pick up this project and want to finish it properly. So my broken features say.
+
+I guess one other thing I wanted to mention is my database because I don't think I wrote an entry on it. Database works, it can store login information about users and you able to work with it. I also think I finished my WIP endpoints, meanining it can also store items, what there name is, price and all of those details(expect for pictures because those are too big). However they aren't connected to anything. That being said, database is working 
+
 Let me know if you have any questions, Thanks!
 
 
