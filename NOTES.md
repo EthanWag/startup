@@ -59,5 +59,21 @@ The real DOM is the entire webpage, and that means DOMs can be pretty big. Howev
             </div>
         </>
     );
-}
+
+# Final questions with the answers I was able to find
+- What is the default port of HTTP, HTTPS, SSH -> Answer: Http = 80, Https = 443, SSH = 22
+- What dos an HTTP status code in the range of 300/400/500 indicate -> Answer: 300 = redirection, 400 = client errors, 500 = server errors
+- What does the HTTP header content-type allow you to do? -> media type of the message, in either the response or request
+- What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do? -> Answer: Secure cookie = only can be sent ovver https connections, Http-only cookie: can only be accessed by the server, SameSite cookies = you can spesfiy where you send cookies from.
+- How should user passwords be stored? -> Answer: using bcyrpt or some way to encrypt it
+- What do the following acronyms stand for? JSX, JS, AWS, NPM, NVM -> Answer: JSX = React, JS = Javascript, AWS = Amazon web services, NPM = Node package manager, NVM = Node version manager
+- What does a React component with React.useState do? -> Answer: saves the state, you change the state and that particular react component saves that value for your instance.
+- What are React Hooks used for? -> Answer: functions that let you add state, side-effects, and reusable logic to functional components, making them dynamic and interactive without needing class components
+- What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do? -> Answer: State Hook = always you to create a variable that keeps track of that particular components state, Context Hook = Always you to create variable that can be used in more functional functions, Ref Hook = allows you to pass a value without re-rendering, Effect Hook = re-renders when recieved and allows for things to change, Preformance Hook = Allows you to memorize a calculation to avoid re-calculating
+- What does the package.json file do? -> Answer: used to manage dependencies
+- What does the fetch function do? -> Answer: allows you to make an http request
+- What does node.js do? -> Answer: A runtime enviorment that allows you to run server side Javascript
+- What does pm2 do? -> Answer: A process manager for Node.js applications. Manages your processes
+- What does Vite do? -> Answer: A web application tool, that allows you to edit your website in real time and allows for efficent work enviorments
+
 
